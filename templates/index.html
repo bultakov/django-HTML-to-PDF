@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML to PDF</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        table td, th {
+            border: 1px solid black;
+        }
+
+        td, th {
+            height: 50px;
+        }
+
+        #cssTable th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<h1>HTML to PDF</h1>
+<table id="cssTable">
+    <tr>
+        <th width="250px">Name</th>
+        <th width="150px">Phone</th>
+    </tr>
+    <tr>
+        <td>{{ data.name }}</td>
+        <td>{{ data.phone }}</td>
+    </tr>
+</table>
+<br>
+<form action="{% url 'pdf' %}">
+    <input type="submit" value="PDF" formtarget="_blank"/>
+</form>
+
+</body>
+</html>
